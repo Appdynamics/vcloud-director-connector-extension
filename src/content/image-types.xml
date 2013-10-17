@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image-types>
+	<image-type>
+		<name>VMware vApp VM</name>
+		<description>VMware vApp VM</description>
+		<property-definitions>
+			<property-definition>
+			<name>vApp name</name>
+			<description>vApp in which the image would be spinned</description>
+			<required>true</required>
+			<type>STRING</type>
+			<default-string-value></default-string-value>
+			<string-max-length>200</string-max-length>
+				<allowed-string-values></allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>        
+        </property-definitions>
+        
+        <supported-compute-center-types>
+            <compute-center-type>VMware vCloud Server</compute-center-type>
+        </supported-compute-center-types>
+    </image-type>	
+	
+</image-types>

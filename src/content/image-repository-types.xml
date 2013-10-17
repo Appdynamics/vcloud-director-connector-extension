@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<image-repository-types>
+	<image-repository-type>
+		<name>VMware vCloud Server</name>
+		<description>VMware vCloud Director</description>
+		<connector-impl-class-name>
+			com.singularity.ee.connectors.vCloud.VMwareCloudConnector
+		</connector-impl-class-name>
+		<machine-image-save-disabled>true</machine-image-save-disabled>
+		<property-definitions>
+			<property-definition>
+				<name>IP Address</name>
+				<description>IP Address of vCloud URL</description>
+				<required>true</required>
+				<type>STRING</type>
+				<default-string-value></default-string-value>
+				<string-max-length>80</string-max-length>
+				<allowed-string-values></allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>
+			<property-definition>
+				<name>Username</name>
+				<description>VMware vCloud Username</description>
+				<required>true</required>
+				<type>STRING</type>
+				<default-string-value></default-string-value>
+				<string-max-length>80</string-max-length>
+				<allowed-string-values></allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>
+			<property-definition>
+				<name>Password</name>
+				<description>VMware vCloud Password</description>
+				<required>true</required>
+				<type>STRING</type>
+				<default-string-value></default-string-value>
+				<string-max-length>80</string-max-length>
+				<allowed-string-values></allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>
+			<property-definition>
+				<name>Organization Name</name>
+				<description>vCloud Organization Name. Defaults to System</description>
+				<required>false</required>
+				<type>STRING</type>
+				<default-string-value></default-string-value>
+				<string-max-length>80</string-max-length>
+				<allowed-string-values></allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>
+			<property-definition>
+				<name>Virtual Datacenter Name</name>
+				<description>VDC in which the new vApp is being instantiated</description>
+				<required>true</required>
+				<type>STRING</type>
+				<default-string-value></default-string-value>
+				<string-max-length>200</string-max-length>
+				<allowed-string-values></allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>
+			<property-definition>
+				<name>vApp Name</name>
+				<description>Name of vApp being searched for/being created </description>
+				<required>true</required>
+				<type>STRING</type>
+				<default-string-value></default-string-value>
+				<string-max-length>200</string-max-length>
+				<allowed-string-values></allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>
+			<property-definition>
+				<name>Create Vapp </name>
+				<description>Create Vapp with the above name</description>
+				<required>false</required>
+				<type>STRING</type>
+				<default-string-value></default-string-value>
+				<string-max-length>10</string-max-length>
+				<allowed-string-values>No,Yes</allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>
+			<property-definition>
+				<name>Catalog Name</name>
+				<description>Catalog containing template for the new vApp. To be provided if creating a vApp</description>
+				<required>false</required>
+				<type>STRING</type>
+				<default-string-value></default-string-value>
+				<string-max-length>200</string-max-length>
+				<allowed-string-values></allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>
+			<property-definition>
+				<name>Template Name</name>
+				<description> Vapp template name. To be provided if creating a new vApp</description>
+				<required>false</required>
+				<type>STRING</type>
+				<default-string-value></default-string-value>
+				<string-max-length>200</string-max-length>
+				<allowed-string-values></allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>
+			<property-definition>
+				<name>Network Name</name>
+				<description> Parent Network Name. To be provided if creating a new vApp</description>
+				<required>false</required>
+				<type>STRING</type>
+				<default-string-value></default-string-value>
+				<string-max-length>200</string-max-length>
+				<allowed-string-values></allowed-string-values>
+				<default-file-value></default-file-value>
+			</property-definition>
+		</property-definitions>
+	</image-repository-type>
+</image-repository-types>
