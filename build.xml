@@ -1,113 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="vCloud.connector" default="build-deep" basedir=".">
+<project name="vcloud.connector" default="build">
+	<property name="src" location="src/main/java" />
+    <property name="content" location="src/main/content" />
+	<property name="build" location="build" />
+	<property name="dist" location="dist" />
+	<property name="jarName" location="connector.jar" />
 
-	<property name="src" location="src/java" />
-	<property name="content" location="src/content" />
-	<property name="build-temp" location="build-tmp" />
-	<property name="build-final" location="build" />
-	<property name="jarName" value="connector.jar" />
-	<property name="api-buildxml" location="../controller-api/build.xml" />
-	<property name="api-jar" location="../controller-api/build/controller-api.jar" />
-	<property name="connector-buildxml" location="../connector-api/build.xml" />
-	<property name="connector-jar" location="../connector-api/build/connector-api.jar" />
-	<property name="thirdparty-lib" location="../../thirdparty/lib" />
-	<property name="shared" location="../../shared/src/java" />
-	<property name="utils-src" location="../../utils/src/java" />
-	<property name="protocol-buffer" location="../../shared/src/protocolbuffer/jars" />
-	<property name="vcloud-rest-lib-jar" location="${thirdparty-lib}/vmware-vcloud/rest-api-schemas-5.1.0.jar" />
-    	<property name="httpDir" location="${thirdparty-lib}/httpcomponents-client-4.2.3/lib" />    
-	<import file="../../thirdparty/lib/findbugs/findbugs_task.xml" />
+	<target name="clean">
+		<delete failonerror="true" quiet="true" includeemptydirs="true">
+			<fileset dir="${dist}" />
+			<fileset dir="${build}" />
+		</delete>
+	</target> 
 	
-	<target name="build-dependencies">
-        <ant antfile="${api-buildxml}" target="build" inheritall="false" />
-    </target>
-    <target name="clean">
-        <delete failonerror="true" quiet="true" includeemptydirs="true">
-            <fileset dir="${build-final}" />
-            <fileset dir="${build-temp}" />
-        </delete>
-    </target>
-    <target name="init" depends="clean">
-        <mkdir dir="${build-final}" />
-        <mkdir dir="${build-temp}" />
-    </target>
-    <target name="compile">
-        <javac srcdir="${src}" destdir="${build-temp}" source="1.6" target="1.6" debug="on" debuglevel="lines,vars,source">
-            <src path="${src}" />
-            <src path="${shared}" />
-            <src path="${utils-src}" />
-            <classpath>
-            	<fileset dir="${httpDir}" >
-                	<include name="*.jar" />
-                </fileset>
-                <fileset file="${api-jar}" />
-                <fileset file="${vcloud-rest-lib-jar}" />
-                <fileset file="${connector-jar}" />
-                
-                <fileset dir="${thirdparty-lib}/log4j">
-                    <include name="*.jar" />
-                </fileset>
-                <fileset dir="${thirdparty-lib}/commons-math-2.1">
-                    <include name="*.jar" />
-                </fileset>
-                <fileset dir="${thirdparty-lib}/commons">
-                    <include name="*.jar" />
-                </fileset>
-                <fileset dir="${thirdparty-lib}/zkm">
-                    <include name="*.jar" />
-                </fileset>
-
-				
-                <fileset dir="${thirdparty-lib}/jms">
-                    <include name="*.jar" />
-                </fileset>
-                <fileset dir="${thirdparty-lib}/hibernate">
-                    <include name="*.jar" />
-                </fileset>
-				
-				
-                <fileset dir="${thirdparty-lib}/gson">
-                    <include name="*.jar" />
-                </fileset>
-                <!-- Needed to compile the "shared" project" -->
-                <fileset dir="${thirdparty-lib}/commons-httpclient">
-                    <include name="*.jar" />
-                </fileset>
-                <fileset dir="${thirdparty-lib}/namespace-safe-xml-apis">
-                    <include name="*.jar" />
-                </fileset>
-                <fileset dir="${thirdparty-lib}/protobuf">
-                    <include name="*.jar" />
-                </fileset>
-                <fileset file="${protocol-buffer}/protocolbuffer-schema.jar" />
-            </classpath>
-        </javac>
-    </target>
-    <target name="package" depends="compile">
-		<jar destfile="${build-final}/${jarName}">
-			<fileset dir="${build-temp}" />
-		</jar>
-		
-		<copy todir="${build-final}">
-            <fileset dir="${content}">
-                <include name="*.*" />
-            </fileset>
-        </copy>
-        
-        <copy todir="${build-final}/lib">
-            <fileset dir="${thirdparty-lib}/vmware-vcloud">
-				<include name="*.jar" />
-            </fileset>
-        </copy>
-        
-        <mkdir dir="${build-final}/lib" />
-        <copy todir="${build-final}/lib">
-            <fileset dir="${thirdparty-lib}">
-                <include name="*.jar" />
-            </fileset>
-        </copy>
+	<target name="init" depends="clean">
+		<mkdir dir="${dist}" />
+		<mkdir dir="${build}" />
 	</target>
-	<target name="build-deep" depends="init, build-dependencies, compile, package"></target>
-	<target name="build" depends="init, compile, package"></target>
 
+	<target name="compile">
+		<javac srcdir="${src}" destdir="${build}" source="1.5" target="1.5" debug="on" debuglevel="lines,vars,source">
+	     		<classpath>
+					<fileset dir="lib">
+                    	<include name="*.jar" />
+                	</fileset>
+            	</classpath>
+	    	</javac>
+		<jar destfile="build/connector.jar" basedir="build"/>
+	</target>
+
+	<target name="package" depends="build">
+		
+		<mkdir dir="${dist}/vcloud"/>
+		<copy todir="${dist}/vcloud">
+            		<fileset dir="${build}">
+                		<include name="connector.jar" />
+            		</fileset>
+		</copy>
+		<copy todir="${dist}/vcloud">
+            		<fileset dir="${content}">
+                		<include name="*.xml" />
+            		</fileset>
+		</copy>
+		<mkdir dir="${dist}/vcloud/lib"/>
+		<copy todir="${dist}/vcloud/lib">
+			<fileset dir="lib">
+				<include name="commons-codec-1.6.jar"/>
+				<include name="httpclient-4.2.3.jar"/>
+				<include name="httpcore-4.2.2.jar"/>
+            </fileset>
+		</copy>
+        	<zip destfile="${dist}/vcloud-connector.zip">
+                <zipfileset dir="${dist}/vcloud" filemode="755" prefix="vcloud/"/>
+        	</zip>
+        	<delete dir="${build}"/>
+        	<delete dir="${dist}/vcloud"/>
+	</target>
+	
+	<target name="build" depends="init, compile">
+	</target>
 </project>

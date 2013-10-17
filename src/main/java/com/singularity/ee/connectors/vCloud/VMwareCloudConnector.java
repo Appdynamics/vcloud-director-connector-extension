@@ -1,7 +1,6 @@
 package com.singularity.ee.connectors.vCloud;
 
 
-import com.appdynamics.util.threadprofiler.log.Logger;
 import com.singularity.ee.connectors.api.ConnectorException;
 import com.singularity.ee.connectors.api.IConnector;
 import com.singularity.ee.connectors.api.IControllerServices;
@@ -13,6 +12,7 @@ import com.singularity.ee.connectors.entity.api.IMachine;
 import com.singularity.ee.connectors.entity.api.IMachineDescriptor;
 import com.singularity.ee.connectors.entity.api.MachineState;
 
+import java.util.logging.Logger;
 
 public class VMwareCloudConnector implements IConnector{
 	
