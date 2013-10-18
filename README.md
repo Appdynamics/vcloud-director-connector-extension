@@ -37,5 +37,9 @@ The vCloud connector is used as a cloud auto scaling solution for VMWare. For in
 2. Run 'ant package' from the cloned vCloud-director-connector-extension directory
 3. Download the file vcloud-connector.zip located in the 'dist' directory into \<controller install dir\>/lib/connectors
 4. Unzip the downloaded file
-5. Restart the Controller.
+5. Restart the Controller
+6. Go to the controller dashboard on the browser. Under Setup->My Preferences->Advanced Features enable "Show Cloud Auto-Scaling features" if it is not enabled. 
+7. On the controller dashboard click "Cloud Auto-Scaling". Three things need to be configured here in no particular order: the compute cloud, the image, and the task library.
+8. Click Compute Cloud->Register Compute Cloud. Refer to the table below to configure the parameters for this compute cloud
+9. Next, click Image->Register Image. Refer to the table below to configure the parameters for this image
 
