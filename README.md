@@ -3,7 +3,7 @@ vcloud-director-connector-extension
 
 ##Use Case
 
-The vCloud connector is used as a cloud auto scaling solution for VMWare. For instance, if there is a health rule violation for the VMWare monitoring extension, then the vCloud connector can be invoked and specific workflow tasks can be triggered. These tasks include launching or terminating VMs based on the health rule.
+The vCloud connector is used as a cloud auto scaling solution for VMWare. For instance, if there is a health rule violation for the VMWare monitoring extension, then the vCloud connector can be invoked and specific workflow tasks can be triggered. These tasks include launching or terminating VMs based on health rules
 
 ##Directory Structure
 
@@ -31,4 +31,11 @@ The vCloud connector is used as a cloud auto scaling solution for VMWare. For in
 </tbody>
 </table>
 
+##Installation
+
+1. Clone the vCloud-director-connector-extension from GitHub
+2. Run 'ant package' from the cloned vCloud-director-connector-extension directory
+3. Download the file vcloud-connector.zip located in the 'dist' directory into \<controller install dir\>/lib/connectors
+4. Unzip the downloaded file
+5. Restart the Controller.
 
