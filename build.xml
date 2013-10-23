@@ -48,7 +48,7 @@
 				<include name="commons-codec-1.6.jar"/>
 				<include name="httpclient-4.2.3.jar"/>
 				<include name="httpcore-4.2.2.jar"/>
-				<include name="connector-api.jar"/>
+                <include name="connector-api.jar"/>
             </fileset>
 		</copy>
         	<zip destfile="${dist}/vcloud-connector.zip">
