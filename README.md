@@ -43,3 +43,16 @@ The vCloud connector is used as a cloud auto scaling solution for VMWare. For in
 8. Click Compute Cloud->Register Compute Cloud. Refer to the table below to configure the parameters for this compute cloud
 9. Next, click Image->Register Image. Refer to the table below to configure the parameters for this image
 
+
+##Contributing
+
+Always feel free to fork and contribute any changes directly via [GitHub](https://github.com/Appdynamics/vcloud-director-connector-extension).
+
+##Community
+
+Find out more in the [AppSphere] community.
+
+##Support
+
+For any questions or feature request, please contact [AppDynamics Center of Excellence](mailto:ace-request@appdynamics.com).
+
