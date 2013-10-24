@@ -1,4 +1,4 @@
-package com.appdynamics.connectors.VdcParams;
+package com.appdynamics.connectors.aws.VdcParams;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;

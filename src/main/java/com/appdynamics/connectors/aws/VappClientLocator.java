@@ -1,4 +1,4 @@
-package com.appdynamics.connectors;
+package com.appdynamics.connectors.aws;
 
 
 import org.w3c.dom.Document;

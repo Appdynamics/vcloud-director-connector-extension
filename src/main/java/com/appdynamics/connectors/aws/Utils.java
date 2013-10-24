@@ -1,4 +1,4 @@
-package com.appdynamics.connectors;
+package com.appdynamics.connectors.aws;
 
 public class Utils {
 	
