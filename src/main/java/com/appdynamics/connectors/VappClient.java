@@ -1,4 +1,4 @@
-package com.singularity.ee.connectors.vCloud;
+package com.appdynamics.connectors;
 
 import java.io.StringWriter;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ import org.apache.http.entity.StringEntity;
 
 import com.singularity.ee.connectors.utils.Constants;
 import com.singularity.ee.connectors.utils.RestClient;
-import com.singularity.ee.connectors.vCloud.VdcParams.HrefElement;
+import com.appdynamics.connectors.VdcParams.HrefElement;
 
 import com.singularity.ee.connectors.api.ConnectorException;
 import com.singularity.ee.connectors.api.IControllerServices;

@@ -1,4 +1,4 @@
-package com.singularity.ee.connectors.vCloud;
+package com.appdynamics.connectors;
 
 
 import org.w3c.dom.Document;

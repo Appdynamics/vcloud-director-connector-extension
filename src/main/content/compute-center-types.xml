@@ -4,8 +4,8 @@
 		<name>VMware vCloud Server</name>
 		<description>VMware vCloud Director</description>
 		<connector-impl-class-name>
-			com.singularity.ee.connectors.vCloud.VMwareCloudConnector
-		</connector-impl-class-name>
+            com.appdynamics.connectors.VMwareCloudConnector
+        </connector-impl-class-name>
 		<machine-image-save-disabled>true</machine-image-save-disabled>
 		<property-definitions>
 			<property-definition>

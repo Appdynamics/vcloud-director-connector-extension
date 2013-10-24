@@ -1,4 +1,4 @@
-package com.singularity.ee.connectors.vCloud.VdcParams;
+package com.appdynamics.connectors.VdcParams;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
