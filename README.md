@@ -51,11 +51,11 @@ Lastly, the vcloud-director-connector-extension may be used to stage migration o
 
 Click Compute Cloud->Register Compute Cloud. Refer to the image below
 
-![alt tag](https://raw.github.com/Appdynamics/vcloud-director-connector-extension/master/VMWare%20vCloud%20Director%20Fields.png?login=rvasanda&token=bea4df877b04b37cc8e293717b67b504)
+![alt tag](https://raw.github.com/Appdynamics/vcloud-director-connector-extension/master/VMWare%20vCloud%20Director%20Fields.png)
 
 Click Image->Register Image. Refer to the image below
 
-![alt tag](https://raw.github.com/Appdynamics/vcloud-director-connector-extension/master/VMWare%20Virtual%20Machine%20Image.png?login=rvasanda&token=db128f73c859b4ea3009c2dd68b8f3fa)
+![alt tag](https://raw.github.com/Appdynamics/vcloud-director-connector-extension/master/VMWare%20Virtual%20Machine%20Image.png)
 
 
 ##Contributing
