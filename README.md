@@ -1,4 +1,4 @@
-vcloud-director-connector-extension
+vCloud Director Connector Extension
 ===================================
 
 ##Use Case
