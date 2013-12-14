@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.appdynamics.connectors.aws;
+package com.appdynamics.connectors.vcd;
 
 
 import org.w3c.dom.Document;

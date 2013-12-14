@@ -13,29 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.appdynamics.connectors.aws.VdcParams;
+package com.appdynamics.connectors.vcd.VdcParams;
 
-import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-public class HrefElement {
-	private String href;
-	private String name;
-
-	public String getHref() {
-		return href;
+@XmlRootElement(name="ComputeCapacity")
+public class Resources {
+	private Cpu cpu;
+	private Cpu Memory;
+	
+	public Cpu getCpu() {
+		return cpu;
+	}
+	@XmlElement(name="Cpu")
+	
+	public void setCpu(Cpu cpu) {
+		this.cpu = cpu;
 	}
 	
-	@XmlAttribute
-	public void setHref(String href) {
-		this.href = href;
+	public Cpu getMemory() {
+		return Memory;
 	}
 	
-	public String getName() {
-		return name;
+	@XmlElement(name="Memory")
+	public void setMemory(Cpu memory) {
+		Memory = memory;
 	}
 	
-	@XmlAttribute
-	public void setName(String name) {
-		this.name = name;
-	}
 }
