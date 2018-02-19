@@ -5,6 +5,7 @@
 	<property name="build" location="build" />
 	<property name="dist" location="dist" />
 	<property name="jarName" location="connector.jar" />
+    <property name="licenses" value="licenses"/>
 
 	<target name="clean">
 		<delete failonerror="true" quiet="true" includeemptydirs="true">
@@ -41,6 +42,10 @@
             		<fileset dir="${content}">
                 		<include name="*.xml" />
             		</fileset>
+            		            		<fileset dir="${licenses}">
+                		<include name="*.txt" />
+            		</fileset>
+
 		</copy>
 		<mkdir dir="${dist}/vcloud/lib"/>
 		<copy todir="${dist}/vcloud/lib">
